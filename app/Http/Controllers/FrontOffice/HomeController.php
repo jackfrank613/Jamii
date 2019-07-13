@@ -10,6 +10,6 @@ class HomeController extends Controller
     // hompage call
     public function getHomepage()
     {
-        return view('frontoffice/navigations/research');
+        return view('frontoffice/home/homepage');
     }
 }

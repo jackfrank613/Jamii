@@ -7,10 +7,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
-    <title>Celt - HTML Construction Website Template</title>
+    <title>Jamii</title>
 
     <!-- Google font -->
     <link href="https://fonts.googleapis.com/css?family=Poppins:400,700" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Alex Brush' rel='stylesheet'>
 
     <!-- Bootstrap -->
     <link type="text/css" rel="stylesheet" href="{{asset('public/css/bootstrap.min.css')}}" />
@@ -26,13 +27,13 @@
     <link rel="stylesheet" href="{{asset('public/css/font-awesome.min.css')}}">
 
     <!-- Custom stlylesheet -->
-    <!-- @include('partials.stylesheets') -->
-
+    
     <link type="text/css" rel="stylesheet" href="{{asset('public/css/mainpage.css')}}" />
     <!-- <link type="text/css" rel="stylesheet" href="{{asset('public/css/productionpage.css')}}" /> -->
     <!-- <link type="text/css" rel="stylesheet" href="{{asset('public/css/auth.css')}}" /> -->
     <link type="text/css" rel="stylesheet" href="{{asset('public/css/style.css')}}" />
     <link type="text/css" rel="stylesheet" href="{{asset('public/css/custom.css')}}" />
+    <link type="text/css" rel="stylesheet" href="{{asset('public/css/header.css')}}">
 
 
 </head>
@@ -40,7 +41,7 @@
 <body>
     <!-- Header -->
 
-    @include('partials.header')
+    @include('frontoffice.partials.headerpart')
     <!-- /Header -->
 
     <!--Dialog-->
@@ -1171,7 +1172,7 @@
 
 
     <!-- Footer Section -->
-    @include('partials.footer')
+    @include('frontoffice.partials.footer')
     <!-- /Footer Section -->
 
     <!-- Preloader -->
@@ -1250,5 +1251,6 @@
     });
 
 </script>
+  @yield('after-script')
 
 </html>

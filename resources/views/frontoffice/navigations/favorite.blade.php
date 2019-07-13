@@ -28,7 +28,7 @@
     <link rel="stylesheet" href="{{asset('public/css/font-awesome.min.css')}}">
 
     <!-- Custom stlylesheet -->
-    <!-- @include('partials.stylesheets') -->
+  
 
     <link type="text/css" rel="stylesheet" href="{{asset('public/css/mainpage.css')}}" />
     <!-- <link type="text/css" rel="stylesheet" href="{{asset('public/css/productionpage.css')}}" /> -->
@@ -41,7 +41,7 @@
 
 <body>
    
-    @include('partials.headerpart')
+    @include('frontoffice.partials.headerpart')
     <section>
         <div class="_3p2mW">
             <div class="_3Cgb0">

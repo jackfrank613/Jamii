@@ -88,7 +88,7 @@ Route::get('/advertise', function () {
  ],function(){
 
      //homepage route
-     Route::get('/','HomeController@getHomepage()')->name('home');
+     Route::get('/','HomeController@getHomepage')->name('home');
      
      //navigation route of header bar
      Route::get('research','NavigationsController@getResearch')->name('research');
