@@ -957,7 +957,7 @@
                     <div class="apn-be" data-reactid="326"><span id="be-s" class="teal-apn"
                             data-reactid="327"></span><span id="be-m" class="teal-apn" data-reactid="328"></span></div>
                     <div class="_2Hpd9" data-reactid="329">
-                        <p class="_25gYq" data-reactid="330">Leboncoin est le site référent de petites annonces de
+                        <p class="_25gYq" data-reactid="330">Jamii est le site référent de petites annonces de
                             particulier à particulier et professionnels en France. Découvrez nos annonces voitures
                             d’occasion, motos, immobilier, emploi, location de vacances, vêtements, électroménager,
                             jouets, déco, meubles, etc. Déposez une annonce gratuite en toute simplicité pour vendre,

@@ -2134,8 +2134,8 @@ screen and (-ms-high-contrast:active) {
     -webkit-border-radius: 4px;
     border-radius: 4px;
     text-align: center;
-    background: url(//static-rav.leboncoin.fr/af430b67bdf3f5726307b9355e0214d7.png) -125px 0 no-repeat, url(//static-rav.leboncoin.fr/af430b67bdf3f5726307b9355e0214d7.png) -webkit-calc(100% + 165px) 0 no-repeat;
-    background: url(//static-rav.leboncoin.fr/af430b67bdf3f5726307b9355e0214d7.png) -125px 0 no-repeat, url(//static-rav.leboncoin.fr/af430b67bdf3f5726307b9355e0214d7.png) calc(100% + 165px) 0 no-repeat;
+    background: url(../img/dollar.PNG) -125px 0 no-repeat, url(../img/dollar.PNG) -webkit-calc(100% + 165px) 0 no-repeat;
+    background: url(../img/phone.PNG) -125px 0 no-repeat, url(../img/phone.PNG) calc(100% + 165px) 0 no-repeat;
     background-color: #4183d7 !important;
     cursor: pointer
 }

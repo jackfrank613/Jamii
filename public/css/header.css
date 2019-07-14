@@ -11,3 +11,17 @@
 ._Place_button{
     margin-left: -4rem!important;
 }
+._1i0e0 {
+    max-width: 1066px;
+    margin: 0px auto;
+}
+.trackable{
+    font-weight: 100;
+}
+
+@media (min-width: 768px)
+{
+    .oPgaL {
+        display: none!important;
+    }
+}

@@ -210,7 +210,7 @@
                                         </ul>
                                     </div>
                                 </div>
-                                @yield('content');
+                                @yield('content')
                             </div>
                             <footer class="_3mBNy">
                                 <div class="_1AsHn In37K">

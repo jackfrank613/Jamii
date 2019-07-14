@@ -95,6 +95,20 @@ Route::get('/advertise', function () {
      Route::get('favorite','NavigationsController@getFavorite')->name('favorite');
      Route::get('message','NavigationsController@getMessage')->name('message');
 
+     //profile route of user
+     Route::get('admob','ProfileController@getAdmob')->name('admob');
+     Route::get('transaction','ProfileController@getTransaction')->name('transaction');
+     Route::get('purchase','ProfileController@getPurchase')->name('purchase');
+     Route::get('account','ProfileController@getAccount')->name('account');
+     Route::get('mycv','ProfileController@getMycv')->name('mycv');
+     Route::get('booking','ProfileController@getBooking')->name('booking');
+
+
+
+
+
+
+
 
 
  });

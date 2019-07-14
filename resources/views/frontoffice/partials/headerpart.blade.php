@@ -62,7 +62,7 @@
                     </div>
                     <div class="s_gWv">
                         <div class="_1tksy">
-                            <a title="Mes recherches" class="trackable" href="{{route('research')}}" data-reactid="40">
+                            <a title="Mes recherches" class="trackable" data-toggle="modal" data-target="#Login_modal" data-reactid="40">
                                 <div class="_3Vuug" data-reactid="41">
                                     <div class="_6rJYh" data-reactid="42"><span class="_1vK7W _71Wec"
                                             name="notifoutline"><svg viewBox="0 0 24 24" data-name="Calque 1"
