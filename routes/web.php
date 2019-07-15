@@ -24,6 +24,8 @@ Route::get('/research', function () {
     return view('navbar.researchpage');
 })->name('research');
 
+Route::get('/post','DataController@getDatapage')->name('post');
+
 Route::get('/favorite', function () {
     return view('navbar.favoritepage');
 })->name('favorite');
@@ -82,6 +84,7 @@ Route::get('/advertise', function () {
 
 
 
+
  Route::group([
    'prefix'=>'frontoffice',
    'namespace'=>'FrontOffice',
@@ -103,12 +106,7 @@ Route::get('/advertise', function () {
      Route::get('mycv','ProfileController@getMycv')->name('mycv');
      Route::get('booking','ProfileController@getBooking')->name('booking');
 
-
-
-
-
-
-
-
+     //post my advertise route
+     Route::get('postadmob','PostAdmobController@getPostadmob')->name('postadmob');
 
  });

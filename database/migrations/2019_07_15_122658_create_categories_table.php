@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateParticularUserTable extends Migration
+class CreateCategoriesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,11 @@ class CreateParticularUserTable extends Migration
      */
     public function up()
     {
-        Schema::create('particular_user', function (Blueprint $table) {
+        Schema::create('categories', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('name',20);
-            $table->string('email',40)->unique();
-            $table->string('password',50);
-            $table->timestamps();
+            $table->string('cname',50);
+            $table->string('icon',20);
+            // $table->timestamps();
         });
     }
 
@@ -29,6 +28,6 @@ class CreateParticularUserTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('particular_user');
+        Schema::dropIfExists('categories');
     }
 }
