@@ -157,7 +157,7 @@
                                         <h3 class="trackable">Facilitez votre achat d’option avec les crédits</h3>
                                         <p>Pré-chargez votre compte du montant de crédits de votre choix et ne saisissez
                                             plus vos coordonnées bancaires à chaque dépôt d’annonce et achat d’option.
-                                        </p><span class="_28rnK"><a class="_2sNbI _1xIyN _2BP2c trackable" href="#"
+                                        </p><span class="_28rnK"><a class="_2sNbI _1xIyN _2BP2c trackable" href="{{route('purchase')}}"
                                                 title="Acheter des crédits" type="button">
                                                 <!-- react-text: 1457 -->Acheter des crédits
                                                 <!-- /react-text --></a></span>

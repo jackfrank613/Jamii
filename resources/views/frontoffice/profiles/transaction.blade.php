@@ -128,7 +128,7 @@
                             </a></li>
                         <div class="_1A0X5">
                             <div class="_1l3a3">
-                                <div class="_36XVT"><a href="https://www.leboncoin.fr/account/my-shopping.html"
+                                <div class="_36XVT"><a href="{{route('purchase')}}"
                                         data-qa-id="credit-link-desktop">
                                         <div class="trackable">
                                             Acheter des crédits

@@ -128,8 +128,7 @@
                             </a></li>
                         <div class="_1A0X5">
                             <div class="_1l3a3">
-                                <div class="_36XVT"><a href="https://www.leboncoin.fr/account/my-shopping.html"
-                                        data-qa-id="credit-link-desktop">
+                                <div class="_36XVT"><a href="{{route('purchase')}}" data-qa-id="credit-link-desktop">
                                         <div class="trackable">
                                             Acheter des crédits
                                         </div>
@@ -177,7 +176,7 @@
                             gagnez du temps et gérez ainsi mieux votre budget.
                             <!-- /react-text -->
                         </p>
-                        <form class="_2-SZr">
+                        <form  name="actionPurchase" class="_2-SZr" id="form-id">
                             <div class="_1-sM_"><label for="price_s15000" class="_3SSA_">
                                     <div><input type="radio" id="price_s15000" name="credits_product_id" value="0">
                                         <!-- react-text: 3077 -->150 €
@@ -223,21 +222,27 @@
                                 <p class="_3HZKW">Les montants des crédits sont indiqués en TTC</p>
                             </div>
                             <div class="checkbox _2WZ__">
-                                <div class="_2k0Hf"><input type="checkbox" id="accept_rule" name="accept_rule"
-                                        value="on"><label for="accept_rule" class="_1ltHB"><span>
+                                <div class="_2k0Hf">
+                                    <input type="checkbox" id="accept_rule" name="accept_rule"
+                                        value="on">
+                                    <label for="accept_rule" class="_1ltHB" style="padding-left: 0;">
+                                        <span>
                                             <!-- react-text: 3060 -->Je reconnais avoir lu et accepté
                                             <!-- /react-text -->
                                             <!-- react-text: 3061 -->
-                                            <!-- /react-text --><a href="https://www.leboncoin.fr/dc/cgv?ca=12_s"
+                                            <!-- /react-text --><a class="_Clink" href="#"
                                                 target="_blank" rel="noopener">
                                                 <!-- react-text: 3063 -->les Conditions Générales de Vente
                                                 <!-- /react-text -->
                                                 <!-- react-text: 3064 -->
                                                 <!-- /react-text --></a><span class="italic">(nos CGV ont évolué,
                                                 n’hésitez pas à les consulter).</span></span></label></div>
-                            </div><button class="_2sNbI _1xIyN _2xk2l trackable" type="submit" title="Valider">
+                            </div>
+                            <div class="_1mm81" style="display:none" data-qa-id="cgv-error" id="purchase_error">Merci de cocher la case déclarant que vous avez
+                                lu et accepté les Conditions Générales de Vente.</div>
+                            <button class="_2sNbI _1xIyN _2xk2l trackable" id="btn_id" title="Valider" >
                                 <!-- react-text: 3067 -->Valider
-                                <!-- /react-text --></button>
+                            </button>
                         </form>
                     </div>
                 </section>
@@ -277,21 +282,38 @@
     <script type="text/javascript" src="{{asset('public/js/main.js')}}"></script>
     <script>
         $(document).ready(function () {
-            var class_purchases=document.getElementsByClassName("_3SSA_");
-            var myPurchase=function(){
+            var check_error=true;
+            var class_purchases = document.getElementsByClassName("_3SSA_");
+            var myPurchase = function () {
                 // console.log(class_purchases[0]);
                 $(class_purchases).removeClass("ya5Kg");
                 $(this).addClass("ya5Kg");
 
 
             }
-            for(var i=0;i<class_purchases.length;i++)
-            {
-                class_purchases[i].addEventListener('click',myPurchase,false);
+            for (var i = 0; i < class_purchases.length; i++) {
+                class_purchases[i].addEventListener('click', myPurchase, false);
             }
+            $('#accept_rule').change(function() {
+                check_error=false;
+           });
+
+           var form = document.getElementById("form-id");
+           document.getElementById("btn_id").addEventListener("click", function () {
+             if(check_error)
+             {
+                 console.log('test');
+                 $('#purchase_error').css("display","block");
+             }
+             else{
+                  form.submit();
+             }
+         });
+
 
 
         });
+
     </script>
 
     @yield('after-script')

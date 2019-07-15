@@ -17359,9 +17359,9 @@ input.edit {
     background-image: url(/fceaaf3b4a6c9df1359c5625647d4855.png)
 }
 
-.selectWrapper {
+/* .selectWrapper {
     background: #fff url(/42c142d25d990a3e29c124eb7a52cac9.png) no-repeat 100%
-}
+} */
 
 .selectWrapper.blue {
     background:  no-repeat 100%
@@ -19561,7 +19561,7 @@ input.edit {
 ._3zYIQ {
     display: inline-block;
     width: 100%;
-    background: #fff url(/42c142d25d990a3e29c124eb7a52cac9.png) no-repeat 100%;
+    /* background: #fff url(/42c142d25d990a3e29c124eb7a52cac9.png) no-repeat 100%; */
     height: 4rem;
     border: 1px solid #cad1d9;
     -webkit-border-radius: 4px;
@@ -20248,7 +20248,7 @@ input.edit {
 ._1uP35 {
     display: inline-block;
     width: 49%;
-    background: #fff url(/42c142d25d990a3e29c124eb7a52cac9.png) no-repeat 100%;
+    /* background: #fff url(/42c142d25d990a3e29c124eb7a52cac9.png) no-repeat 100%; */
     height: 4rem;
     border: 1px solid #cad1d9;
     -webkit-border-radius: 4px;
@@ -21796,7 +21796,7 @@ input.edit {
 
 .BDOEi {
     width: 100%;
-    background: #fff url(/42c142d25d990a3e29c124eb7a52cac9.png) no-repeat 100%;
+    /* background: #fff url(/42c142d25d990a3e29c124eb7a52cac9.png) no-repeat 100%; */
     height: 4rem;
     border: 1px solid #cad1d9;
     -webkit-border-radius: 4px;
