@@ -18,6 +18,14 @@
 .trackable{
     font-weight: 100;
 }
+.h2text{
+    font-weight: 100;
+    font-size: 20px;
+}
+.ya5Kg{
+    border: 1px solid #f56b2a;
+    background: #fafafa;
+}
 
 @media (min-width: 768px)
 {

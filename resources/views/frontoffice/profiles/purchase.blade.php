@@ -48,7 +48,7 @@
 <body>
     @include('frontoffice.partials.headerpart')
     <section>
-     <div>
+        <div>
             <div>
                 <div class="xkw6H">
                     <ul class="_1i0e0 AVKQ-">
@@ -146,8 +146,111 @@
                     </ul>
                 </div>
             </div>
-       
-    </div>
+            <div class="_1o5Iq">
+                <!-- react-empty: 3035 -->
+                <div class="_1i0e0 _14mnT">
+                    <div class="_2Dlhe">
+                        <div class="_36XVT"><a data-qa-id="credit-link-mobile"
+                                href="https://www.leboncoin.fr/account/my-shopping" class="trackable"><span
+                                    class="_1vK7W _210mY" name="credit"><svg viewBox="0 0 24 24" data-name="Calque 1"
+                                        focusable="false">
+                                        <path
+                                            d="M11.2 3.92c0 1.34-2.51 2.43-5.6 2.43S0 5.26 0 3.92 2.51 1.5 5.6 1.5s5.6 1.08 5.6 2.42zM5.6 7.56C2.51 7.56 0 6.47 0 5.14v1.61c0 1.34 2.51 2.42 5.6 2.42s5.6-1.08 5.6-2.42V5.14c0 1.33-2.51 2.42-5.6 2.42zm0 2.83C2.51 10.39 0 9.3 0 8v1.58C0 10.92 2.51 12 5.6 12s5.6-1.08 5.6-2.42V8c0 1.3-2.51 2.39-5.6 2.39zm12.8-6.06c-3.09 0-5.6 1.08-5.6 2.42s2.51 2.42 5.6 2.42S24 8.09 24 6.75s-2.51-2.42-5.6-2.42zm0 6.06c-3.09 0-5.6-1.09-5.6-2.43v1.62c0 1.34 2.51 2.42 5.6 2.42S24 10.92 24 9.58V8c0 1.3-2.51 2.39-5.6 2.39zM6 13.2h-.4c-3.09 0-5.6-1.08-5.6-2.42v1.62c0 1.34 2.51 2.43 5.6 2.43v-.41A2 2 0 0 1 6 13.2zm-6 .42v1.61c0 1.34 2.51 2.42 5.6 2.42V16C2.51 16 0 15 0 13.62zm18.4 1.21c3.09 0 5.6-1.09 5.6-2.43v-1.61c0 1.34-2.51 2.42-5.6 2.42H18a2 2 0 0 1 .42 1.22zm5.6.4v-1.61C24 15 21.49 16 18.4 16v1.61c3.09.04 5.6-1.04 5.6-2.38zM12 12c-3.09 0-5.6 1.08-5.6 2.42s2.51 2.43 5.6 2.43 5.6-1.09 5.6-2.43S15.09 12 12 12zm0 6.06c-3.09 0-5.6-1.09-5.6-2.42v1.61c0 1.34 2.51 2.42 5.6 2.42s5.6-1.08 5.6-2.42v-1.61c0 1.36-2.51 2.42-5.6 2.42zm0 2.83c-3.09 0-5.6-1.09-5.6-2.43v1.62c0 1.34 2.51 2.42 5.6 2.42s5.6-1.08 5.6-2.42v-1.62c0 1.34-2.51 2.43-5.6 2.43z">
+                                        </path>
+                                    </svg></span><!-- react-text: 3043 -->Acheter des crédits
+                                <!-- /react-text --></a></div>
+                    </div>
+                    <h1 style="font-weight: 100;
+    font-size: 18px;
+    font-size: 1.8rem;
+    margin-top: 10px;">Mes achats</h1>
+                </div>
+                <section class="_3sqhV">
+                    <div class="_1i0e0 _1kQ3D">
+                        <h2 style="font-weight:100;font-size:20px">Acheter des crédits</h2>
+                        <p class="_3U-Dz"><span class="_4CWiq">Facile, Rapide, Pratique !</span>
+                            <!-- react-text: 3050 -->
+                            <!-- /react-text -->
+                            <!-- react-text: 3051 -->Grâce à l'achat de crédits, vous pré-chargez votre Compte Personnel
+                            du montant de votre choix. Vous n'aurez ainsi plus besoin de saisir vos coordonnées
+                            bancaires à chaque dépôt d'annonce et achat d'option sur le site ou les applications. Vous
+                            gagnez du temps et gérez ainsi mieux votre budget.
+                            <!-- /react-text -->
+                        </p>
+                        <form class="_2-SZr">
+                            <div class="_1-sM_"><label for="price_s15000" class="_3SSA_">
+                                    <div><input type="radio" id="price_s15000" name="credits_product_id" value="0">
+                                        <!-- react-text: 3077 -->150 €
+                                        <!-- /react-text -->
+                                    </div>
+                                    <div class="_1394M">
+                                        <!-- react-text: 3079 -->+
+                                        <!-- /react-text -->
+                                        <!-- react-text: 3080 -->10
+                                        <!-- /react-text -->
+                                        <!-- react-text: 3081 --> € offerts
+                                        <!-- /react-text -->
+                                    </div>
+                                </label><label for="price_s10000" class="_3SSA_">
+                                    <div><input type="radio" id="price_s10000" name="credits_product_id" value="1">
+                                        <!-- react-text: 3085 -->100 €
+                                        <!-- /react-text -->
+                                    </div>
+                                    <div class="_1394M">
+                                        <!-- react-text: 3087 -->+
+                                        <!-- /react-text -->
+                                        <!-- react-text: 3088 -->5
+                                        <!-- /react-text -->
+                                        <!-- react-text: 3089 --> € offerts
+                                        <!-- /react-text -->
+                                    </div>
+                                </label><label for="price_s5000" class="_3SSA_">
+                                    <div><input type="radio" id="price_s5000" name="credits_product_id" value="2">
+                                        <!-- react-text: 3093 -->50 €
+                                        <!-- /react-text -->
+                                    </div>
+                                </label><label for="price_s2500" class="_3SSA_ ya5Kg">
+                                    <div><input type="radio" id="price_s2500" name="credits_product_id" value="3">
+                                        <!-- react-text: 3097 -->25 €
+                                        <!-- /react-text -->
+                                    </div>
+                                </label><label for="price_s1000" class="_3SSA_">
+                                    <div><input type="radio" id="price_s1000" name="credits_product_id" value="4">
+                                        <!-- react-text: 3101 -->10 €
+                                        <!-- /react-text -->
+                                    </div>
+                                </label>
+                                <p class="_3HZKW">Les montants des crédits sont indiqués en TTC</p>
+                            </div>
+                            <div class="checkbox _2WZ__">
+                                <div class="_2k0Hf"><input type="checkbox" id="accept_rule" name="accept_rule"
+                                        value="on"><label for="accept_rule" class="_1ltHB"><span>
+                                            <!-- react-text: 3060 -->Je reconnais avoir lu et accepté
+                                            <!-- /react-text -->
+                                            <!-- react-text: 3061 -->
+                                            <!-- /react-text --><a href="https://www.leboncoin.fr/dc/cgv?ca=12_s"
+                                                target="_blank" rel="noopener">
+                                                <!-- react-text: 3063 -->les Conditions Générales de Vente
+                                                <!-- /react-text -->
+                                                <!-- react-text: 3064 -->
+                                                <!-- /react-text --></a><span class="italic">(nos CGV ont évolué,
+                                                n’hésitez pas à les consulter).</span></span></label></div>
+                            </div><button class="_2sNbI _1xIyN _2xk2l trackable" type="submit" title="Valider">
+                                <!-- react-text: 3067 -->Valider
+                                <!-- /react-text --></button>
+                        </form>
+                    </div>
+                </section>
+                <section class="xGZGo">
+                    <div class="_1i0e0 _1JON3">
+                        <h2 style="font-weight:100;font-size:20px;">Historique de vos achats</h2>
+                        <p class="information-alert">Vous n’avez effectué aucune transaction sur le site web ou les
+                            applications.</p>
+                    </div>
+                </section>
+            </div>
+
+        </div>
 
 
     </section>
@@ -174,10 +277,21 @@
     <script type="text/javascript" src="{{asset('public/js/main.js')}}"></script>
     <script>
         $(document).ready(function () {
+            var class_purchases=document.getElementsByClassName("_3SSA_");
+            var myPurchase=function(){
+                // console.log(class_purchases[0]);
+                $(class_purchases).removeClass("ya5Kg");
+                $(this).addClass("ya5Kg");
+
+
+            }
+            for(var i=0;i<class_purchases.length;i++)
+            {
+                class_purchases[i].addEventListener('click',myPurchase,false);
+            }
 
 
         });
-
     </script>
 
     @yield('after-script')

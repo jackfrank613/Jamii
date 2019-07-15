@@ -181,10 +181,7 @@
                     <section class="SwH9t" data-qa-id="purchases_container">
                         <h2>Mes Achats</h2>
                         <div>
-                            <div class="_2jbV6 _2jIuO"><img class="_2HoAv" src="//static-rav.leboncoin.fr/b301a6c45acac83fc78f3f1215f4434f.png" srcset="
-            //static-rav.leboncoin.fr/b301a6c45acac83fc78f3f1215f4434f.png,
-            //static-rav.leboncoin.fr/2b64346dfc3ec2585f34fc6573b6f1ca.png 2x
-          ">
+                            <div class="_2jbV6 _2jIuO"><img class="_2HoAv" src="../public/img/zoom.PNG">
                                 <p class="_13_6z" data-qa-id="txt_empty_purchases">Il semblerait que vous n’ayez pas
                                     encore fait d’achats...</p>
                             </div>
@@ -193,10 +190,7 @@
                     <section class="SwH9t" data-qa-id="sales_container">
                         <h2>Mes Ventes</h2>
                         <div>
-                            <div class="_2jbV6 _2jIuO"><img class="_2HoAv" src="//static-rav.leboncoin.fr/b301a6c45acac83fc78f3f1215f4434f.png" srcset="
-            //static-rav.leboncoin.fr/b301a6c45acac83fc78f3f1215f4434f.png,
-            //static-rav.leboncoin.fr/2b64346dfc3ec2585f34fc6573b6f1ca.png 2x
-          ">
+                            <div class="_2jbV6 _2jIuO"><img class="_2HoAv" src="../public/img/zoom.PNG">
                                 <p class="_13_6z" data-qa-id="txt_empty_sales">Il semblerait que vous n’ayez pas encore
                                     fait de ventes...</p>
                             </div>

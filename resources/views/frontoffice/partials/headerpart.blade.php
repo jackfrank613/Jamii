@@ -117,22 +117,29 @@
                                 <div class="_5GFF2" data-text="jack" data-reactid="58">Se connecter</div>
                                 <div class="_23pPb">
                                     <div class="_3QR8U">
-                                        <ul><a class="trackable" href="#">
+                                        <ul>
+                                            <a class="trackable" href="{{route('admob')}}">
                                                 <li class="_2Yoaz">
-                                                    <!-- react-text: 171 -->Mes annonces
-                                                    <!-- /react-text -->
+                                                 Mes annonces
                                                 </li>
-                                            </a><a class="trackable" href="#">
+                                            </a>
+                                            <a class="trackable" href="{{route('transaction')}}">
                                                 <li class="_2Yoaz">Mes transactions</li>
-                                            </a><a class="trackable" href="#">
+                                            </a>
+                                            <a class="trackable" href="{{route('account')}}">
                                                 <li class="_2Yoaz">Mon compte</li>
-                                            </a><a class="trackable" href="#">
+                                            </a>
+                                            <a class="trackable" href="{{route('purchase')}}">
                                                 <li class="_2Yoaz">Mes achats</li>
-                                            </a><a class="trackable" href="#">
+                                            </a>
+                                            <a class="trackable" href="{{route('booking')}}">
                                                 <li class="_2Yoaz">Mes réservations</li>
                                             </a>
-                                            <li class="_2Yoaz _3e-pq trackable" data-qa-id="profilarea-logout">Se
+                                            <a class="trackable" href="{{route('home')}}" >
+                                             <li class="_2Yoaz _3e-pq trackable" data-qa-id="profilarea-logout">Se
                                                 déconnecter</li>
+                                            </a>
+                                            
                                         </ul>
                                     </div>
                                 </div>

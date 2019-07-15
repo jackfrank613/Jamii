@@ -49,7 +49,7 @@
     @include('frontoffice.partials.headerpart')
     <section>
     <div>
-    <div>
+        <div>
                 <div class="xkw6H">
                     <ul class="_1i0e0 AVKQ-">
                         <li class="_3Y9_a rljXf">
@@ -145,7 +145,8 @@
                         </div>
                     </ul>
                 </div>
-            </div>
+        </div>
+        <div><header class="_3JoYi"></header><div class="_1i0e0 _1Gy5i"><h1 class="_2-DLV">Mes réservations</h1><div class="_30-H2"><!-- react-text: 192 -->Retrouvez ici le détail de vos réservations<!-- /react-text --><!-- react-text: 193 --> <!-- /react-text --><strong><!-- react-text: 195 -->en tant que vacanciers.<!-- /react-text --><br><!-- react-text: 197 -->Pour gérer les réservations de votre logement en tant qu’hôte,<!-- /react-text --></strong><!-- react-text: 198 --> <!-- /react-text --><a class="_2Tcuv" href="/compte/part/mes-annonces">rendez-vous dans vos annonces.</a></div></div><div class="_1i0e0 _3snmT"><div class="Rf4k_">Vous n’avez pas encore de réservation</div></div></div>
 
     </div>
         
