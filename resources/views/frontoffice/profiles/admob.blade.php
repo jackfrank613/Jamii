@@ -970,7 +970,7 @@
                         <div class="_1i0e0">
                             <div>
                                 <p>Vous n’avez aucune annonce en ligne</p><span class="_28rnK"><a
-                                        class="_2sNbI _1xIyN _2xk2l rz48Z trackable" href="/deposer-une-annonce/"
+                                        class="_2sNbI _1xIyN _2xk2l rz48Z trackable" href="{{route('advertise')}}"
                                         title="Déposer une annonce"><span class="_1vK7W _2S72Q" name="newadoutline"><svg
                                                 viewBox="0 0 24 24" data-name="Calque 1" focusable="false">
                                                 <path

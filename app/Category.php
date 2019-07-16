@@ -7,9 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 class Category extends Model
 {
     //
-    protected $table = 'admobsite_category';
+    protected $table = 'jamii_categories';
     protected $fillable = [
-        'c_name', 
+        'cname', 'icon',
     ];
 
 }

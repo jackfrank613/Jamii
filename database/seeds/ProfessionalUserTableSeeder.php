@@ -12,7 +12,7 @@ class ProfessionalUserTableSeeder extends Seeder
     public function run()
     {
         //
-        DB::table('professional_user')->insert([
+        DB::table('jamii_professionaluser')->insert([
             'name'=>'jackfrank',
             'f_name'=>'jack',
             'email'=>'jackfrank@gmail.com',

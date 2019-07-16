@@ -13,7 +13,7 @@ class CreateParticularUserTable extends Migration
      */
     public function up()
     {
-        Schema::create('particular_user', function (Blueprint $table) {
+        Schema::create('jamii_particularuser', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name',20);
             $table->string('email',40)->unique();

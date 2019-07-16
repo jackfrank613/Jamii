@@ -4905,7 +4905,8 @@ title {
     -webkit-transition: ease, -webkit-box-shadow .2s;
     transition: ease, -webkit-box-shadow .2s;
     transition: box-shadow .2s, ease;
-    transition: box-shadow .2s, ease, -webkit-box-shadow .2s
+    transition: box-shadow .2s, ease, -webkit-box-shadow .2s;
+    background: white;
 }
 
 ._2hSIh img:hover {

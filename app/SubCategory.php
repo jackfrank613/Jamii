@@ -7,9 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 class SubCategory extends Model
 {
     //
-    protected $table = 'admobsite_subcategory';
+    protected $table = 'jamii_subcategory';
     protected $fillable = [
-        'sub_id','id','s_name','option' ,
+        'c_id','sname','option' ,
     ];
 
 }

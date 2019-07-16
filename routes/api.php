@@ -20,8 +20,8 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 /** this is api for admob detail. */
 Route::prefix('admobdetail')->group(function(){
  
-    Route::post('/detail_category','DetailedCategoryController@addSelectCategory')->name('detail_category');
-    Route::post('/detail_description','DetailedCategoryController@addDescriptionCategory')->name('detail_description');
+    // Route::post('/detail_category','DetailedCategoryController@addSelectCategory')->name('detail_category');
+    // Route::post('/detail_description','DetailedCategoryController@addDescriptionCategory')->name('detail_description');
     Route::post('/detail_price','DetailedCategoryController@addPriceCategory')->name('detail_price');
     Route::post('/detail_picture','DetailedCategoryController@addPictureCategory')->name('imageupload');
 

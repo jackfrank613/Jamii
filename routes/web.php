@@ -56,7 +56,7 @@ Route:: prefix('profile')->group(function(){
     return view('profiles.myadmobpage');
     })->name('myadmob_create');
 
-    Route::get('/advertise','CategoryController@initCategory')->name('advertise');
+    // Route::get('/advertise','CategoryController@initCategory')->name('advertise');
 
     Route::get('/mytransaction', function () {
         return view('profiles.mytransactionpage');
@@ -90,8 +90,16 @@ Route::get('/advertise', function () {
    'namespace'=>'FrontOffice',
  ],function(){
 
-     //homepage route
+     //homepage and post admob route
      Route::get('/','HomeController@getHomepage')->name('home');
+     Route::get('/advertise','PostAdmobController@initCategory')->name('advertise');
+     Route::post('/advertise/postcategory','PostAdmobController@addSelectCategory')->name('postcategory');
+     Route::post('/advertise/postdescription','PostAdmobController@addDescriptionCategory')->name('postdescription');
+     Route::post('/advertise/postprice','PostAdmobController@addPriceCategory')->name('postprice');
+     Route::post('/advertise/uploadpicture','PostAdmobController@loadPictureCategory')->name('uploadpicture');
+     Route::post('/advertise/postimage','PostAdmobController@addPictureCategory')->name('postimage');
+
+     
      
      //navigation route of header bar
      Route::get('research','NavigationsController@getResearch')->name('research');

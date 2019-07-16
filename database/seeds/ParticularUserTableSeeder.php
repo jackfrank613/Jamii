@@ -12,7 +12,7 @@ class ParticularUserTableSeeder extends Seeder
     public function run()
     {
         //
-        DB::table('particular_user')->insert([
+        DB::table('jamii_particularuser')->insert([
             'name'=>'jackfrank',
             'email'=>'jackfranker@gmail.com',
             'password'=>'fe01ce2a7fbac8fafaed7c982a04e229',

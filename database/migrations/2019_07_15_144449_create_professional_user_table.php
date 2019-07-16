@@ -13,7 +13,7 @@ class CreateProfessionalUserTable extends Migration
      */
     public function up()
     {
-        Schema::create('professional_user', function (Blueprint $table) {
+        Schema::create('jamii_professionaluser', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name',20);
             $table->string('f_name',20);

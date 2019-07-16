@@ -13,7 +13,7 @@ class CreateCategoriesTable extends Migration
      */
     public function up()
     {
-        Schema::create('categories', function (Blueprint $table) {
+        Schema::create('jamii_categories', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('cname',50);
             $table->string('icon',20);
