@@ -155,4 +155,26 @@ class PostAdmobController extends BaseController
       
       }
 
+      public function addInformation(){
+       
+         $data=$_POST;
+         $input_category_information=array(
+          'email'=>$data['email'],
+          'phone'=>$data['phone'],
+          'id' => $data['id'],
+          'enable'=>$data['enable'],
+        );
+          // echo json_encode(array('result'=>$data['id']));
+         $result=PostedAdmob::where('id',"=",$data['id'])->update($input_category_information);
+       
+        if($result)
+        {
+          echo json_encode(array('error'=>false,'result'=>"success"));
+        }
+        else{
+          echo json_encode(array('error'=>false,'result'=>"error"));
+
+        }
+      }
+
 }

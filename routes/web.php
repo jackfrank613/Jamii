@@ -26,6 +26,9 @@ Route::get('/research', function () {
 
 Route::get('/post','DataController@getDatapage')->name('post');
 
+
+Route::get('/map', 'ExampleController@getInit')->name('homepage');
+
 Route::get('/favorite', function () {
     return view('navbar.favoritepage');
 })->name('favorite');
@@ -98,6 +101,8 @@ Route::get('/advertise', function () {
      Route::post('/advertise/postprice','PostAdmobController@addPriceCategory')->name('postprice');
      Route::post('/advertise/uploadpicture','PostAdmobController@loadPictureCategory')->name('uploadpicture');
      Route::post('/advertise/postimage','PostAdmobController@addPictureCategory')->name('postimage');
+     Route::post('/advertise/postinformation','PostAdmobController@addInformation')->name('information');
+
 
      
      

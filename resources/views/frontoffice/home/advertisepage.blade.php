@@ -690,7 +690,7 @@
         
                                             </div>
                                         <div>
-                                        <button class="_2sNbI _1xIyN _2xk2l _3FcC9" type="submit">Continuer</button>
+                                        <button class="_2sNbI _1xIyN _2xk2l _3FcC9" type="button" id="forwardbutton">Continuer</button>
                                           
                                             </div>
                                     </div>
@@ -707,7 +707,8 @@
                         <div class="_3QHYd">
                             <h3 class="_3MDJa _30A-8">Vos coordonnées</h3>
                         </div>
-                        <form>
+                        <form id="information_form" method="POST" action="{{route('information')}}">
+                        <input type="hidden" name="_token" id="token" value="{{ csrf_token() }}">
                             <div class="_3KRvg">
                                 <div class="zfCs0">
                                     <div><label class="TMFen" for="email">
@@ -1086,7 +1087,42 @@
                 $('#category_photo').css('display', 'block');
 
             });
-           
+            $('#category_map').on('click', '#forwardbutton', function () {
+                console.log("test");
+                $('#category_map').css('display', 'none');
+                $('#category_final_information').css('opacity', '1');
+
+            });
+           $('#information_form').on('submit',function(event){
+            event.preventDefault(); 
+            var email=$('input[name=email]').val();
+            var phone=$('input[name=phone]').val();
+            console.log(id);
+            $.ajax({
+                        type: 'POST',
+                        url: "{{route('information')}}",
+                        data: {
+                            id:id,
+                            email: email,
+                            phone: phone,
+                            enable:1,
+                            _token: $('input[name=_token]').val(),
+                        },
+                        dataType: "json",
+                        success: function (data) {
+                            if (data.error) {
+                                console.log("error");
+
+                            } else {
+                                console.log(data.result);
+                            }
+                        }
+                    });
+           });
+           $('#category_final_information').on('click','#backbutton',function(){
+                $('#category_final_information').css('display', 'none');
+                $('#category_map').css('display','block');
+           });
 
 
         });
