@@ -102,10 +102,11 @@ Route::get('/advertise', function () {
      Route::post('/advertise/uploadpicture','PostAdmobController@loadPictureCategory')->name('uploadpicture');
      Route::post('/advertise/postimage','PostAdmobController@addPictureCategory')->name('postimage');
      Route::post('/advertise/postinformation','PostAdmobController@addInformation')->name('information');
+     Route::post('/advertise/mapcoordinates','PostAdmobController@getCoordinates')->name('coordinates');
 
 
      
-     
+
      //navigation route of header bar
      Route::get('research','NavigationsController@getResearch')->name('research');
      Route::get('favorite','NavigationsController@getFavorite')->name('favorite');

@@ -1,80 +1,173 @@
 <!DOCTYPE html>
-<html lang="en">
-
-<head>
+<html>
+  <head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Places Search Box</title>
+    <style>
+      /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+      #map {
+        height: 100%;
+      }
+      /* Optional: Makes the sample page fill the window. */
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+      #description {
+        font-family: Roboto;
+        font-size: 15px;
+        font-weight: 300;
+      }
 
-    <title>Celt - HTML Construction Website Template</title>
+      #infowindow-content .title {
+        font-weight: bold;
+      }
 
-    <!-- Google font -->
-    <link href="https://fonts.googleapis.com/css?family=Poppins:400,700" rel="stylesheet">
+      #infowindow-content {
+        display: none;
+      }
 
-    <!-- Bootstrap -->
-    <link type="text/css" rel="stylesheet" href="{{asset('public/css/bootstrap.min.css')}}" />
+      #map #infowindow-content {
+        display: inline;
+      }
 
-    <!-- Owl Carousel -->
-    <link type="text/css" rel="stylesheet" href="{{asset('public/css/owl.carousel.css')}}" />
-    <link type="text/css" rel="stylesheet" href="{{asset('public/css/owl.theme.default.css')}}" />
+      .pac-card {
+        margin: 10px 10px 0 0;
+        border-radius: 2px 0 0 2px;
+        box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        outline: none;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+        background-color: #fff;
+        font-family: Roboto;
+      }
 
-    <!-- Magnific Popup -->
-    <link type="text/css" rel="stylesheet" href="{{asset('public/css/magnific-popup.css')}}" />
+      #pac-container {
+        padding-bottom: 12px;
+        margin-right: 12px;
+      }
 
-    <!-- Font Awesome Icon -->
-    <link rel="stylesheet" href="{{asset('public/css/font-awesome.min.css')}}">
+      .pac-controls {
+        display: inline-block;
+        padding: 5px 11px;
+      }
 
-    <!-- Custom stlylesheet -->
-    <!-- @include('partials.stylesheets') -->
+      .pac-controls label {
+        font-family: Roboto;
+        font-size: 13px;
+        font-weight: 300;
+      }
 
-    <link type="text/css" rel="stylesheet" href="{{asset('public/css/mainpage.css')}}" />
-    <!-- <link type="text/css" rel="stylesheet" href="{{asset('public/css/productionpage.css')}}" /> -->
-    <!-- <link type="text/css" rel="stylesheet" href="{{asset('public/css/auth.css')}}" /> -->
-    <link type="text/css" rel="stylesheet" href="{{asset('public/css/style.css')}}" />
-    <link type="text/css" rel="stylesheet" href="{{asset('public/css/custom.css')}}" />
+      #pac-input {
+        background-color: #fff;
+        font-family: Roboto;
+        font-size: 15px;
+        font-weight: 300;
+        margin-left: 12px;
+        padding: 0 11px 0 13px;
+        text-overflow: ellipsis;
+        width: 400px;
+      }
 
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-		  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-		  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-		<![endif]-->
+      #pac-input:focus {
+        border-color: #4d90fe;
+      }
 
-</head>
+      #title {
+        color: #fff;
+        background-color: #4d90fe;
+        font-size: 25px;
+        font-weight: 500;
+        padding: 6px 12px;
+      }
+      #target {
+        width: 345px;
+      }
+    </style>
+  </head>
+  <body>
+    <input id="pac-input" class="controls" type="text" placeholder="Search Box">
+    <div id="map"></div>
+    <script>
+      // This example adds a search box to a map, using the Google Place Autocomplete
+      // feature. People can enter geographical searches. The search box will return a
+      // pick list containing a mix of places and predicted search terms.
 
-<body>
-    <!-- Header -->
+      // This example requires the Places library. Include the libraries=places
+      // parameter when you first load the API. For example:
+      // <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
 
-    <!-- /Header -->
+      function initAutocomplete() {
+        var map = new google.maps.Map(document.getElementById('map'), {
+          center: {lat: -33.8688, lng: 151.2195},
+          zoom: 13,
+          mapTypeId: 'roadmap'
+        });
 
-    <!-- Home Section -->
+        // Create the search box and link it to the UI element.
+        var input = document.getElementById('pac-input');
+        var searchBox = new google.maps.places.SearchBox(input);
+        map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
 
-    <!-- /Home Section -->
+        // Bias the SearchBox results towards current map's viewport.
+        map.addListener('bounds_changed', function() {
+          searchBox.setBounds(map.getBounds());
+        });
 
-    <!-- Footer Section -->
+        var markers = [];
+        // Listen for the event fired when the user selects a prediction and retrieve
+        // more details for that place.
+        searchBox.addListener('places_changed', function() {
+          var places = searchBox.getPlaces();
 
-    <!-- /Footer Section -->
+          if (places.length == 0) {
+            return;
+          }
 
-    <!-- Preloader -->
-    <div id="preloader">
-        <div class="preloader">
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-    </div>
-    <!-- /Preloader -->
+          // Clear out the old markers.
+          markers.forEach(function(marker) {
+            marker.setMap(null);
+          });
+          markers = [];
 
-    <!-- jQuery Plugins -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="{{asset('public/js/owl.carousel.min.js')}}"></script>
-    <script type="text/javascript" src="{{asset('public/js/jquery.magnific-popup.js')}}"></script>
-    <script type="text/javascript" src="{{asset('public/js/main.js')}}"></script>
+          // For each place, get the icon, name and location.
+          var bounds = new google.maps.LatLngBounds();
+          places.forEach(function(place) {
+            if (!place.geometry) {
+              console.log("Returned place contains no geometry");
+              return;
+            }
+            var icon = {
+              url: place.icon,
+              size: new google.maps.Size(71, 71),
+              origin: new google.maps.Point(0, 0),
+              anchor: new google.maps.Point(17, 34),
+              scaledSize: new google.maps.Size(25, 25)
+            };
 
-</body>
+            // Create a marker for each place.
+            markers.push(new google.maps.Marker({
+              map: map,
+              icon: icon,
+              title: place.name,
+              position: place.geometry.location
+            }));
 
+            if (place.geometry.viewport) {
+              // Only geocodes have viewport.
+              bounds.union(place.geometry.viewport);
+            } else {
+              bounds.extend(place.geometry.location);
+            }
+          });
+          map.fitBounds(bounds);
+        });
+      }
+
+    </script>
+   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCXAEJOmp7v7uXD-Vrmaw6xjBl_ZExIn7g&libraries=places&callback=initAutocomplete"></script>
+  </body>
 </html>

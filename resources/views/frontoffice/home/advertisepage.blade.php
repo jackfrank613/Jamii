@@ -27,7 +27,7 @@
     <link rel="stylesheet" href="{{asset('public/css/font-awesome.min.css')}}">
 
     <!-- Custom stlylesheet -->
-  
+
 
     <link type="text/css" rel="stylesheet" href="{{asset('public/css/mainpage.css')}}" />
     <!-- <link type="text/css" rel="stylesheet" href="{{asset('public/css/productionpage.css')}}" /> -->
@@ -99,10 +99,8 @@
                                                     @php
                                                     $categories = $data['categories'];
                                                     $subcategories = $data['subcategories'];
-                                                    for($i = 1; $i < count($categories); $i+=2){ 
-                                                        $cate=$categories[$i];
-                                                        @endphp 
-                                                <div class="_3BIbD">
+                                                    for($i = 1; $i < count($categories); $i+=2){ $cate=$categories[$i];
+                                                        @endphp <div class="_3BIbD">
                                                         <div class="PHfT3">
                                                             <div class="_3ytUb subcategory_collapse"
                                                                 data-toggle="collapse"
@@ -245,8 +243,8 @@
                                     <h3 class="_3MDJa _30A-8">Choisissez la catégorie</h3>
                                 </div>
                                 <form id="new_button_subcategory" method="POST" action="{{route('postcategory')}}">
-                               
-                                <input type="hidden" name="_token" id="token" value="{{ csrf_token() }}">
+
+                                    <input type="hidden" name="_token" id="token" value="{{ csrf_token() }}">
                                     <div class="LzDnW">
                                         <div class="_3lCVd">
                                             <div class="_3bAPj">Catégorie</div>
@@ -310,6 +308,7 @@
                 </div>
             </div>
             <div class="_14s_w" id="detail_category">
+                `
             </div>
             <div class="_14s_w" id="category_description" style="display:none">
                 <div class="_1AsHn _2siHy _38NUf _3aduF">
@@ -318,7 +317,7 @@
                             <h3 class="_3MDJa _30A-8">Décrivez votre bien !</h3>
                         </div>
                         <form id="description_form" method="POST" action="{{route('postdescription')}}">
-                        <input type="hidden" name="_token" id="token" value="{{ csrf_token() }}">
+                            <input type="hidden" name="_token" id="token" value="{{ csrf_token() }}">
                             <div class="_3KRvg">
                                 <div class="zfCs0 _2R7h7">
                                     <div><label class="TMFen" for="subject">
@@ -384,7 +383,7 @@
                             <h3 class="_3MDJa _30A-8">Quel est votre prix ?</h3>
                         </div>
                         <form id="price_form" method="POST" action="{{route('postprice')}}">
-                        <input type="hidden" name="_token" id="token" value="{{ csrf_token() }}">
+                            <input type="hidden" name="_token" id="token" value="{{ csrf_token() }}">
                             <div class="_3KRvg">
                                 <div class="zfCs0">
                                     <div><label class="TMFen" for="price">
@@ -515,21 +514,25 @@
                                 </div>
                             </div>
                         </div>
-                        <form method="POST" id="upload_form" action="{{route('postimage')}}" enctype="multipart/form-data">
-                        {{ csrf_field() }}                                    
-                        <div class="BB7X4">
-                            <div class="_39Nsm">
-                                <!-- {{csrf_field()}} -->
-                                <div>
-                                    <button class="_2sNbI _1xIyN _2BP2c" type="button" data-qa-id="newad-button-prev-price" id="backbutton" type="button">Retour</button>                                        
+                        <form method="POST" id="upload_form" action="{{route('postimage')}}"
+                            enctype="multipart/form-data">
+                            {{ csrf_field() }}
+                            <div class="BB7X4">
+                                <div class="_39Nsm">
+                                    <!-- {{csrf_field()}} -->
+                                    <div>
+                                        <button class="_2sNbI _1xIyN _2BP2c" type="button"
+                                            data-qa-id="newad-button-prev-price" id="backbutton"
+                                            type="button">Retour</button>
+                                    </div>
+                                    <div>
+                                        <input type="file" name="select_file" id="select_file" accept="image/*"
+                                            style="display:none;">
+                                        <button class="_2sNbI _1xIyN _2xk2l _3FcC9" type="submit">Continuer</button>
+                                    </div>
                                 </div>
-                                <div>
-                                    <input type="file" name="select_file" id="select_file" accept="image/*" style="display:none;" >
-                                    <button class="_2sNbI _1xIyN _2xk2l _3FcC9"  type="submit">Continuer</button>
-                                </div>
+                                <!-- </form> -->
                             </div>
-                            <!-- </form> -->
-                        </div>
                     </div>
                     <div class="_1aYAF"></div>
                 </div>
@@ -543,162 +546,50 @@
                         </div>
                         <div class="_2-T4y">
                             <form>
+                                <input type="hidden" name="_token" id="token" value="{{ csrf_token() }}">
                                 <div>
                                     <div class="n0W59">
                                         <div role="combobox" aria-expanded="false" aria-haspopup="listbox"
                                             aria-labelledby="downshift-1-label">
-                                            <div class="_3jQxT">
-                                                <div class="_326Lx">
-                                                    <div class="_2sDcJ" data-tip="" data-place="right"
-                                                        data-scroll-hide="true" currentitem="false"><span
-                                                            class="_1vK7W _1eOK1" name="geoloc"><svg viewBox="0 0 24 24"
-                                                                data-name="Calque 1" focusable="false">
-                                                                <path
-                                                                    d="M12 7.64A4.36 4.36 0 1 0 16.36 12 4.36 4.36 0 0 0 12 7.64zm9.75 3.27a9.8 9.8 0 0 0-8.66-8.66V1.09a1.09 1.09 0 1 0-2.18 0v1.16a9.8 9.8 0 0 0-8.66 8.66H1.09a1.09 1.09 0 0 0 0 2.18h1.16a9.8 9.8 0 0 0 8.66 8.66v1.16a1.09 1.09 0 0 0 2.18 0v-1.16a9.8 9.8 0 0 0 8.66-8.66h1.16a1.09 1.09 0 0 0 0-2.18zM12 19.64A7.64 7.64 0 1 1 19.64 12 7.64 7.64 0 0 1 12 19.64z">
-                                                                </path>
-                                                            </svg></span></div>
-                                                </div><input type="text" aria-autocomplete="list"
-                                                    aria-labelledby="downshift-1-label" autocomplete="off" value=""
-                                                    id="downshift-1-input" class="input full address _2e58F"
-                                                    name="address" data-qa-id="newad-input_address"
-                                                    placeholder="Renseignez votre adresse ou votre ville"
-                                                    data-tip="Nous n’afficherons pas votre adresse sur l’annonce"
-                                                    data-place="bottom" disabled="" currentitem="false"><button
-                                                    class="_1SIJo" type="button" disabled=""><span class="_1vK7W _1eOK1"
-                                                        name="search"><svg viewBox="0 0 24 24" data-name="Calque 1"
-                                                            focusable="false">
-                                                            <path
-                                                                d="M23.58 21.45l-7-7a9.42 9.42 0 0 0 1.62-6.87A9.13 9.13 0 0 0 10.34.07a9.25 9.25 0 0 0-2.81 18.27 9.25 9.25 0 0 0 7-1.76l7 7a1.54 1.54 0 0 0 2.11 0 1.56 1.56 0 0 0-.06-2.13zM9.22 15.5a6.37 6.37 0 1 1 6.33-6.37 6.33 6.33 0 0 1-6.33 6.37z">
-                                                            </path>
-                                                        </svg></span></button>
-                                            </div>
+
                                         </div>
                                     </div>
                                     <div class="_15M3j">
-                                        <div class="sF8mr" data-qa-id="locationMap_container">
-                                            <div class="leaflet-container leaflet-touch leaflet-fade-anim leaflet-grab leaflet-touch-drag leaflet-touch-zoom"
-                                                tabindex="-1">
-                                                <!-- react-empty: 1709 -->
-                                                <!-- react-empty: 1710 -->
-                                                <div class="leaflet-pane leaflet-map-pane"
-                                                    style="transform: translate3d(0px, 0px, 0px);">
-                                                    <div class="leaflet-pane leaflet-tile-pane">
-                                                        <div class="leaflet-layer " style="z-index: 1; opacity: 1;">
-                                                            <div class="leaflet-tile-container leaflet-zoom-animated"
-                                                                style="z-index: 20; transform: translate3d(0px, 0px, 0px) scale(1);">
-                                                                <img alt="" role="presentation"
-                                                                    src="https://proxytile-2.leboncoin.fr/maptile/2.1/maptile/newest/normal.day/6/31/22/256/png8?lg=fre"
-                                                                    class="leaflet-tile leaflet-tile-loaded"
-                                                                    style="width: 256px; height: 256px; transform: translate3d(48px, -14px, 0px); opacity: 1;"><img
-                                                                    alt="" role="presentation"
-                                                                    src="https://proxytile-3.leboncoin.fr/maptile/2.1/maptile/newest/normal.day/6/32/22/256/png8?lg=fre"
-                                                                    class="leaflet-tile leaflet-tile-loaded"
-                                                                    style="width: 256px; height: 256px; transform: translate3d(304px, -14px, 0px); opacity: 1;"><img
-                                                                    alt="" role="presentation"
-                                                                    src="https://proxytile-3.leboncoin.fr/maptile/2.1/maptile/newest/normal.day/6/31/23/256/png8?lg=fre"
-                                                                    class="leaflet-tile leaflet-tile-loaded"
-                                                                    style="width: 256px; height: 256px; transform: translate3d(48px, 242px, 0px); opacity: 1;"><img
-                                                                    alt="" role="presentation"
-                                                                    src="https://proxytile-4.leboncoin.fr/maptile/2.1/maptile/newest/normal.day/6/32/23/256/png8?lg=fre"
-                                                                    class="leaflet-tile leaflet-tile-loaded"
-                                                                    style="width: 256px; height: 256px; transform: translate3d(304px, 242px, 0px); opacity: 1;"><img
-                                                                    alt="" role="presentation"
-                                                                    src="https://proxytile-1.leboncoin.fr/maptile/2.1/maptile/newest/normal.day/6/30/22/256/png8?lg=fre"
-                                                                    class="leaflet-tile leaflet-tile-loaded"
-                                                                    style="width: 256px; height: 256px; transform: translate3d(-208px, -14px, 0px); opacity: 1;"><img
-                                                                    alt="" role="presentation"
-                                                                    src="https://proxytile-4.leboncoin.fr/maptile/2.1/maptile/newest/normal.day/6/33/22/256/png8?lg=fre"
-                                                                    class="leaflet-tile leaflet-tile-loaded"
-                                                                    style="width: 256px; height: 256px; transform: translate3d(560px, -14px, 0px); opacity: 1;"><img
-                                                                    alt="" role="presentation"
-                                                                    src="https://proxytile-2.leboncoin.fr/maptile/2.1/maptile/newest/normal.day/6/30/23/256/png8?lg=fre"
-                                                                    class="leaflet-tile leaflet-tile-loaded"
-                                                                    style="width: 256px; height: 256px; transform: translate3d(-208px, 242px, 0px); opacity: 1;"><img
-                                                                    alt="" role="presentation"
-                                                                    src="https://proxytile-1.leboncoin.fr/maptile/2.1/maptile/newest/normal.day/6/33/23/256/png8?lg=fre"
-                                                                    class="leaflet-tile leaflet-tile-loaded"
-                                                                    style="width: 256px; height: 256px; transform: translate3d(560px, 242px, 0px); opacity: 1;"><img
-                                                                    alt="" role="presentation"
-                                                                    src="https://proxytile-1.leboncoin.fr/maptile/2.1/maptile/newest/normal.day/6/34/22/256/png8?lg=fre"
-                                                                    class="leaflet-tile leaflet-tile-loaded"
-                                                                    style="width: 256px; height: 256px; transform: translate3d(816px, -14px, 0px); opacity: 1;"><img
-                                                                    alt="" role="presentation"
-                                                                    src="https://proxytile-2.leboncoin.fr/maptile/2.1/maptile/newest/normal.day/6/34/23/256/png8?lg=fre"
-                                                                    class="leaflet-tile leaflet-tile-loaded"
-                                                                    style="width: 256px; height: 256px; transform: translate3d(816px, 242px, 0px); opacity: 1;">
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="leaflet-pane leaflet-shadow-pane"></div>
-                                                    <div class="leaflet-pane leaflet-overlay-pane"></div>
-                                                    <div class="leaflet-pane leaflet-marker-pane"></div>
-                                                    <div class="leaflet-pane leaflet-tooltip-pane"></div>
-                                                    <div class="leaflet-pane leaflet-popup-pane"></div>
-                                                    <div class="leaflet-proxy leaflet-zoom-animated"
-                                                        style="transform: translate3d(8296px, 5776px, 0px) scale(32);">
-                                                    </div>
-                                                </div>
-                                                <div class="leaflet-control-container">
-                                                    <div class="leaflet-top leaflet-left"></div>
-                                                    <div class="leaflet-top leaflet-right"></div>
-                                                    <div class="leaflet-bottom leaflet-left"></div>
-                                                    <div class="leaflet-bottom leaflet-right">
-                                                        <div class="leaflet-control-zoom leaflet-bar leaflet-control">
-                                                            <a class="leaflet-control-zoom-in" href="#" title="Agrandir"
-                                                                role="button" aria-label="Agrandir">
-                                                                <font style="vertical-align: inherit;">
-                                                                    <font style="vertical-align: inherit;">+
-                                                                    </font>
-                                                                </font>
-                                                            </a><a class="leaflet-control-zoom-out" href="#"
-                                                                title="Dézoomer" role="button" aria-label="Dézoomer">
-                                                                <font style="vertical-align: inherit;">
-                                                                    <font style="vertical-align: inherit;">-
-                                                                    </font>
-                                                                </font>
-                                                            </a></div>
-                                                        <div class="leaflet-control-attribution leaflet-control">
-                                                            <a href="#"
-                                                                title="Une bibliothèque JS pour les cartes interactives">
-                                                                <font style="vertical-align: inherit;">
-                                                                    <font style="vertical-align: inherit;">
-                                                                        Dépliant</font>
-                                                                </font>
-                                                            </a>
-                                                            <font style="vertical-align: inherit;">
-                                                                <font style="vertical-align: inherit;"> |
-                                                                </font>
-                                                            </font><a href="#" target="_blank" rel="noopener"
-                                                                tabindex="-1">
-                                                                <font style="vertical-align: inherit;">
-                                                                    <font style="vertical-align: inherit;">©
-                                                                        2019 ICI</font>
-                                                                </font>
-                                                            </a>
-                                                        </div>
-                                                    </div>
-                                                </div>
+                                        <input id="pac-input" class="controls" type="text" placeholder="Search Box">
+                                        <div id="map"></div>
+                                    </div>
+                                    <div class="_4cwig">
+                                        <div class="_39Nsm">
+                                            <div>
+                                                <button class="_2sNbI _1xIyN _2BP2c" type="button"
+                                                    data-qa-id="newad-button-prev-description"
+                                                    id="backbutton">Retour</button>
+
+                                            </div>
+                                            <div>
+                                                <button class="_2sNbI _1xIyN _2xk2l _3FcC9" type="button"
+                                                    id="forwardbutton">Continuer</button>
+
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="__react_component_tooltip place-top type-dark " data-id="tooltip"></div>
-                                </div>
-                                <div class="_4cwig">
-                                    <div class="_39Nsm">
-                                        <div>
-                                        <button class="_2sNbI _1xIyN _2BP2c" type="button" data-qa-id="newad-button-prev-description" id="backbutton">Retour</button>
-        
-                                            </div>
-                                        <div>
-                                        <button class="_2sNbI _1xIyN _2xk2l _3FcC9" type="button" id="forwardbutton">Continuer</button>
-                                          
-                                            </div>
-                                    </div>
-                                </div>
                             </form>
                         </div>
                     </div>
-                    <div class="_1aYAF"><div class="_2BPbl"><div class="o73DF"></div><div class="Hunbm"><span class="_1vK7W" name="lightbulboutline"><svg viewBox="0 0 24 24" data-name="Calque 1" focusable="false"><path d="M5.56 4.77l-.43-.42a1.09 1.09 0 0 0-1.53 0 1 1 0 0 0 0 1.47l.4.42a1 1 0 0 0 1.41 0 .92.92 0 0 0 .15-1.47zM2.18 11.48H1.09a1 1 0 1 0 0 2.09h1.09a1.07 1.07 0 0 0 1.09-1.05 1 1 0 0 0-1.09-1.04zM12 4a1 1 0 0 0 1.09-1v-.95a1.09 1.09 0 0 0-2.18 0V3.1A1.06 1.06 0 0 0 12 4zM20.51 4.35a1.09 1.09 0 0 0-1.53 0l-.43.42a1 1 0 0 0 0 1.47 1.07 1.07 0 0 0 1.52 0l.44-.42a1.22 1.22 0 0 0 0-1.47zM12.87 6.24a6.44 6.44 0 0 0-7.42 6.18 6.22 6.22 0 0 0 3.28 5.45V22a1.14 1.14 0 0 0 1.09 1h4.36a1.14 1.14 0 0 0 1.09-1v-4a6.24 6.24 0 0 0 3.17-6.39 6.36 6.36 0 0 0-5.57-5.37zm1.31 9.85l-1.09.62v4.19h-2.18v-4.19l-1.09-.62a4.21 4.21 0 0 1-2.18-3.67A4.29 4.29 0 0 1 12 8.23a4.29 4.29 0 0 1 4.36 4.19 4.21 4.21 0 0 1-2.18 3.67zM22.91 11.48h-1.09a1 1 0 1 0 0 2.09h1.09A1.08 1.08 0 0 0 24 12.52a1 1 0 0 0-1.09-1.04z"></path></svg></span></div><div class="o73DF"></div></div><div><span>Pour des raisons de confidentialité, si vous renseignez votre adresse exacte, celle-ci n’apparaîtra jamais sur votre annonce.</span></div></div>
+                    <div class="_1aYAF">
+                        <div class="_2BPbl">
+                            <div class="o73DF"></div>
+                            <div class="Hunbm"><span class="_1vK7W" name="lightbulboutline"><svg viewBox="0 0 24 24"
+                                        data-name="Calque 1" focusable="false">
+                                        <path
+                                            d="M5.56 4.77l-.43-.42a1.09 1.09 0 0 0-1.53 0 1 1 0 0 0 0 1.47l.4.42a1 1 0 0 0 1.41 0 .92.92 0 0 0 .15-1.47zM2.18 11.48H1.09a1 1 0 1 0 0 2.09h1.09a1.07 1.07 0 0 0 1.09-1.05 1 1 0 0 0-1.09-1.04zM12 4a1 1 0 0 0 1.09-1v-.95a1.09 1.09 0 0 0-2.18 0V3.1A1.06 1.06 0 0 0 12 4zM20.51 4.35a1.09 1.09 0 0 0-1.53 0l-.43.42a1 1 0 0 0 0 1.47 1.07 1.07 0 0 0 1.52 0l.44-.42a1.22 1.22 0 0 0 0-1.47zM12.87 6.24a6.44 6.44 0 0 0-7.42 6.18 6.22 6.22 0 0 0 3.28 5.45V22a1.14 1.14 0 0 0 1.09 1h4.36a1.14 1.14 0 0 0 1.09-1v-4a6.24 6.24 0 0 0 3.17-6.39 6.36 6.36 0 0 0-5.57-5.37zm1.31 9.85l-1.09.62v4.19h-2.18v-4.19l-1.09-.62a4.21 4.21 0 0 1-2.18-3.67A4.29 4.29 0 0 1 12 8.23a4.29 4.29 0 0 1 4.36 4.19 4.21 4.21 0 0 1-2.18 3.67zM22.91 11.48h-1.09a1 1 0 1 0 0 2.09h1.09A1.08 1.08 0 0 0 24 12.52a1 1 0 0 0-1.09-1.04z">
+                                        </path>
+                                    </svg></span></div>
+                            <div class="o73DF"></div>
+                        </div>
+                        <div><span>Pour des raisons de confidentialité, si vous renseignez votre adresse exacte,
+                                celle-ci n’apparaîtra jamais sur votre annonce.</span></div>
+                    </div>
                 </div>
             </div>
             <div class="_14s_w" id="category_final_information" style="opacity:0.2">
@@ -708,7 +599,7 @@
                             <h3 class="_3MDJa _30A-8">Vos coordonnées</h3>
                         </div>
                         <form id="information_form" method="POST" action="{{route('information')}}">
-                        <input type="hidden" name="_token" id="token" value="{{ csrf_token() }}">
+                            <input type="hidden" name="_token" id="token" value="{{ csrf_token() }}">
                             <div class="_3KRvg">
                                 <div class="zfCs0">
                                     <div><label class="TMFen" for="email">
@@ -755,19 +646,20 @@
                                     diffuser mon annonce.</div>
                                 <div class="_39Nsm">
                                     <div>
-                                    <button class="_2sNbI _1xIyN _2BP2c" type="button"
+                                        <button class="_2sNbI _1xIyN _2BP2c" type="button"
                                             data-qa-id="newad-button-prev-contact" id="backbutton">Retour</button>
-                                        
-                                            </div>
-                                    <div>
-                                    
-                                    <button class="_2sNbI _1xIyN _2xk2l _3FcC9" type="submit" id="btnbutton">Continuer</button>
 
+                                    </div>
+                                    <div>
+
+                                        <button class="_2sNbI _1xIyN _2xk2l _3FcC9" type="submit"
+                                            id="btnbutton">Continuer</button>
+
+                                    </div>
                                 </div>
-                            </div>
                         </form>
                     </div>
-                    
+
                 </div>
             </div>
         </div>
@@ -798,6 +690,7 @@
     <script type="text/javascript" src="{{asset('public/js/owl.carousel.min.js')}}"></script>
     <script type="text/javascript" src="{{asset('public/js/jquery.magnific-popup.js')}}"></script>
     <script type="text/javascript" src="{{asset('public/js/main.js')}}"></script>
+
 
     <script>
         var sub_id;
@@ -892,7 +785,7 @@
                 var url = $('#description_form').attr('action');
                 // console.log($('input[name=_token]').val());
                 if (subject != "" && description != "") {
-                 
+
                     $.ajax({
                         type: 'POST',
                         url: url,
@@ -900,7 +793,7 @@
                             id: sub_category_id,
                             subject: subject,
                             body: description,
-                           _token: $('input[name=_token]').val(),
+                            _token: $('input[name=_token]').val(),
                         },
                         dataType: "json",
                         success: function (data) {
@@ -973,23 +866,23 @@
             $('.add_new_image').click(function () {
                 var fullimage_count = document.getElementsByClassName("full_image");
                 console.log(fullimage_count.length);
-                if(parseInt(fullimage_count.length) < 3){
+                if (parseInt(fullimage_count.length) < 3) {
                     console.log("please add image");
                     $('input[name=select_file]').trigger('click');
-                }else{
+                } else {
                     console.log("no");
                     alert("you must add images");
                 }
-                
+
                 //   console.log(file);
             });
             $('.l1Oku').on('click', '.empty_file ._35a0H', function () {
                 var fullimage_count = document.getElementsByClassName("full_image");
                 console.log(fullimage_count.length);
-                if(parseInt(fullimage_count.length) < 3){
+                if (parseInt(fullimage_count.length) < 3) {
                     console.log("ok");
                     $('input[name=select_file]').trigger('click');
-                }else{
+                } else {
                     console.log("no");
                     alert("you must add images");
                 }
@@ -998,32 +891,40 @@
 
             $('input[name=select_file]').on('change', function () {
                 var formData = new FormData();
-                if(typeof $('input[name=select_file]')[0].files[0] != "undefined"){
+                if (typeof $('input[name=select_file]')[0].files[0] != "undefined") {
                     console.log($('input[name=select_file]')[0].files[0]);
-                    formData.append('select_file', $('input[name=select_file]')[0].files[0]); 
-                    formData.append('_token',$('input[name=_token]').val());
+                    formData.append('select_file', $('input[name=select_file]')[0].files[0]);
+                    formData.append('_token', $('input[name=_token]').val());
                     var empty_file = document.getElementsByClassName('empty_file');
                     console.log($('input[name=_token]').val());
                     var first_element = empty_file[0];
-                    var base_url = {!! json_encode(url('/')) !!};
+                    var base_url = {!!json_encode(url('/')) !!};             
                     $.ajax({
                         type: "POST",
                         enctype: 'multipart/form-data',
                         url: "{{route('uploadpicture')}}",
-                        data:formData,
+                        data: formData,
                         cache: false,
                         contentType: false,
                         processData: false,
                         success: function (data) {
                             data = JSON.parse(data);
-                            if(!data.error){                               
-                                var html = '<div class="_2hSIh _26o9N"><img alt="products" src="'+ base_url + "/storage/images/" + data.result +'"><span  class="_26mZh" name="close" data-name="'+ data.result +'"><span class="_1vK7W" ><svg viewBox="0 0 24 24" data-name="Calque 1" focusable="false"><path d="M23.47 20.9l-8.9-8.9 8.9-8.9A1.81 1.81 0 0 0 20.9.55L12 9.43 3.1.53A1.82 1.82 0 0 0 .53 3.1l8.9 8.9-8.9 8.9a1.82 1.82 0 0 0 2.57 2.57l8.9-8.9 8.9 8.9a1.82 1.82 0 0 0 2.57-2.57z"></path></svg></span></span><div class="_35a0H"><span class="_1vK7W _3p-rd" name="cameraoutline"><svg viewBox="0 0 24 24" data-name="Calque 1" focusable="false"><path d="M21.6 3.54h-3.8L15.6 1.1H8.4L6.2 3.54H2.4A2.43 2.43 0 0 0 0 6v14.66a2.43 2.43 0 0 0 2.4 2.44h19.2a2.43 2.43 0 0 0 2.4-2.44V6a2.43 2.43 0 0 0-2.4-2.46zm0 17.12H2.4V6h4.86l2.2-2.45h5.08L16.74 6h4.86zM12 7.21a6.11 6.11 0 1 0 6 6.11 6.06 6.06 0 0 0-6-6.11zM12 17a3.67 3.67 0 1 1 3.6-3.67A3.65 3.65 0 0 1 12 17z"></path></svg></span><p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Photo # 2</font></font></p></div></div>';
+                            if (!data.error) {
+                                var html =
+                                    '<div class="_2hSIh _26o9N"><img alt="products" src="' +
+                                    base_url + "/storage/images/" + data.result +
+                                    '"><span  class="_26mZh" name="close" data-name="' +
+                                    data.result +
+                                    '"><span class="_1vK7W" ><svg viewBox="0 0 24 24" data-name="Calque 1" focusable="false"><path d="M23.47 20.9l-8.9-8.9 8.9-8.9A1.81 1.81 0 0 0 20.9.55L12 9.43 3.1.53A1.82 1.82 0 0 0 .53 3.1l8.9 8.9-8.9 8.9a1.82 1.82 0 0 0 2.57 2.57l8.9-8.9 8.9 8.9a1.82 1.82 0 0 0 2.57-2.57z"></path></svg></span></span><div class="_35a0H"><span class="_1vK7W _3p-rd" name="cameraoutline"><svg viewBox="0 0 24 24" data-name="Calque 1" focusable="false"><path d="M21.6 3.54h-3.8L15.6 1.1H8.4L6.2 3.54H2.4A2.43 2.43 0 0 0 0 6v14.66a2.43 2.43 0 0 0 2.4 2.44h19.2a2.43 2.43 0 0 0 2.4-2.44V6a2.43 2.43 0 0 0-2.4-2.46zm0 17.12H2.4V6h4.86l2.2-2.45h5.08L16.74 6h4.86zM12 7.21a6.11 6.11 0 1 0 6 6.11 6.06 6.06 0 0 0-6-6.11zM12 17a3.67 3.67 0 1 1 3.6-3.67A3.65 3.65 0 0 1 12 17z"></path></svg></span><p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Photo # 2</font></font></p></div></div>';
                                 $(first_element).html(html);
                                 $(first_element).removeClass('empty_file');
                                 $(first_element).addClass('full_image');
-                                $('#upload_form').append('<input type="hidden" id="'+ (data.result).split('.')[0] +'" name="upload_images[]" value="' + data.result + '" />');
-                            }else{
-                                
+                                $('#upload_form').append('<input type="hidden" id="' + (data
+                                        .result).split('.')[0] +
+                                    '" name="upload_images[]" value="' + data.result +
+                                    '" />');
+                            } else {
+
                             }
                             console.log(data);
                         },
@@ -1032,10 +933,10 @@
                         }
                     });
                 }
-                
+
             });
 
-            $('.l1Oku').on('click', 'span[name=close]', function(){
+            $('.l1Oku').on('click', 'span[name=close]', function () {
                 // var image = $(this).data('image');
                 // console.log(image);
                 $(this).parent().parent().remove();
@@ -1043,14 +944,15 @@
                 $("input[id=" + delete_image.split('.')[0] + ']').remove();
                 // var full_images = document.getElementsByClassName('full_image');
                 // var delete_image = full_images[full_images.length - 1];
-                var html = '<div class="_11wrr empty_file"><div class="_2hSIh _26o9N ufciE"><div class="_35a0H "><span class="_1vK7W _3p-rd" name="cameraoutline"><svg viewBox="0 0 24 24" data-name="Calque 1" focusable="false"><path d="M21.6 3.54h-3.8L15.6 1.1H8.4L6.2 3.54H2.4A2.43 2.43 0 0 0 0 6v14.66a2.43 2.43 0 0 0 2.4 2.44h19.2a2.43 2.43 0 0 0 2.4-2.44V6a2.43 2.43 0 0 0-2.4-2.46zm0 17.12H2.4V6h4.86l2.2-2.45h5.08L16.74 6h4.86zM12 7.21a6.11 6.11 0 1 0 6 6.11 6.06 6.06 0 0 0-6-6.11zM12 17a3.67 3.67 0 1 1 3.6-3.67A3.65 3.65 0 0 1 12 17z"></path></svg></span><p>Photo n°2</p></div></div></div>';
+                var html =
+                    '<div class="_11wrr empty_file"><div class="_2hSIh _26o9N ufciE"><div class="_35a0H "><span class="_1vK7W _3p-rd" name="cameraoutline"><svg viewBox="0 0 24 24" data-name="Calque 1" focusable="false"><path d="M21.6 3.54h-3.8L15.6 1.1H8.4L6.2 3.54H2.4A2.43 2.43 0 0 0 0 6v14.66a2.43 2.43 0 0 0 2.4 2.44h19.2a2.43 2.43 0 0 0 2.4-2.44V6a2.43 2.43 0 0 0-2.4-2.46zm0 17.12H2.4V6h4.86l2.2-2.45h5.08L16.74 6h4.86zM12 7.21a6.11 6.11 0 1 0 6 6.11 6.06 6.06 0 0 0-6-6.11zM12 17a3.67 3.67 0 1 1 3.6-3.67A3.65 3.65 0 0 1 12 17z"></path></svg></span><p>Photo n°2</p></div></div></div>';
                 $('.l1Oku').append(html);
                 // $(delete_image).removeClass('full_image');
                 // $(delete_image).addClass('empty_file');
             });
 
             $('#upload_form').on('submit', function (event) {
-                event.preventDefault();        
+                event.preventDefault();
                 var formData = new FormData($('#upload_form')[0]);
                 formData.append('id', id);
                 // data['file'] = $('input[type=file]')[0].files[0]; 
@@ -1064,12 +966,10 @@
                     contentType: false,
                     processData: false,
                     success: function (data) {
-                        
-                        if(data.error)
-                        {
+
+                        if (data.error) {
                             console.log("error");
-                        }
-                        else{
+                        } else {
                             $('#category_photo').css('display', 'none');
                             $('#category_map').css('opacity', '1');
                         }
@@ -1080,7 +980,7 @@
                 });
 
             });
-        
+
             $('#category_map').on('click', '#backbutton', function () {
                 console.log("test");
                 $('#category_map').css('opacity', '0.2');
@@ -1093,40 +993,187 @@
                 $('#category_final_information').css('opacity', '1');
 
             });
-           $('#information_form').on('submit',function(event){
-            event.preventDefault(); 
-            var email=$('input[name=email]').val();
-            var phone=$('input[name=phone]').val();
-            console.log(id);
-            $.ajax({
-                        type: 'POST',
-                        url: "{{route('information')}}",
-                        data: {
-                            id:id,
-                            email: email,
-                            phone: phone,
-                            enable:1,
-                            _token: $('input[name=_token]').val(),
-                        },
-                        dataType: "json",
-                        success: function (data) {
-                            if (data.error) {
-                                console.log("error");
+            $('#information_form').on('submit', function (event) {
+                event.preventDefault();
+                var email = $('input[name=email]').val();
+                var phone = $('input[name=phone]').val();
+                console.log(id);
+                $.ajax({
+                    type: 'POST',
+                    url: "{{route('information')}}",
+                    data: {
+                        id: id,
+                        email: email,
+                        phone: phone,
+                        enable: 1,
+                        _token: $('input[name=_token]').val(),
+                    },
+                    dataType: "json",
+                    success: function (data) {
+                        if (data.error) {
+                            console.log("error");
 
-                            } else {
-                                console.log(data.result);
-                            }
+                        } else {
+                            console.log(data.result);
                         }
-                    });
-           });
-           $('#category_final_information').on('click','#backbutton',function(){
+                    }
+                });
+            });
+            $('#category_final_information').on('click', '#backbutton', function () {
                 $('#category_final_information').css('display', 'none');
-                $('#category_map').css('display','block');
-           });
+                $('#category_map').css('display', 'block');
+            });
 
 
         });
 
+    </script>
+
+    <script>
+        // This example adds a search box to a map, using the Google Place Autocomplete
+        // feature. People can enter geographical searches. The search box will return a
+        // pick list containing a mix of places and predicted search terms.
+
+        // This example requires the Places library. Include the libraries=places
+        // parameter when you first load the API. For example:
+        // <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
+        var poly ;
+        function initAutocomplete() {
+            var map = new google.maps.Map(document.getElementById('map'), {
+                center: {
+                    lat: 48.8566,
+                    lng: 2.3522
+                },
+                zoom: 13,
+                mapTypeId: 'roadmap'
+            });
+
+            // Create the search box and link it to the UI element.
+            var options = {
+                types: ['(cities)'],
+            };
+            var input = document.getElementById('pac-input');
+            var searchBox = new google.maps.places.SearchBox(input, options);
+            map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
+
+            // Bias the SearchBox results towards current map's viewport.
+            map.addListener('bounds_changed', function () {
+                searchBox.setBounds(map.getBounds());
+            });
+
+            var markers = [];
+            var addresses = [];
+            var city_name;
+            // Listen for the event fired when the user selects a prediction and retrieve
+            // more details for that place.
+
+            poly = new google.maps.Polyline({
+                strokeColor: '#000000',
+                strokeOpacity: 1.0,
+                strokeWeight: 3
+            });
+            poly.setMap(map);
+
+            searchBox.addListener('places_changed', function () {
+
+                var places = searchBox.getPlaces();
+                // console.log(places[0]['name']); 
+
+                addresses = places[0]['address_components'];
+                console.log(addresses);
+                for (var i = 0; i < addresses.length; i++) {
+                    if (addresses[i]['types'][0] == "locality") {
+                        city_name = addresses[i]['long_name'];
+
+                        break;
+                    }
+                }
+                  console.log(city_name);
+
+                if (places.length == 0) {
+                    return;
+                }
+
+
+
+                // Clear out the old markers.
+                markers.forEach(function (marker) {
+                    marker.setMap(null);
+                });
+                markers = [];
+
+                // For each place, get the icon, name and location.
+                var bounds = new google.maps.LatLngBounds();
+                places.forEach(function (place) {
+                    if (!place.geometry) {
+                        console.log("Returned place contains no geometry");
+                        return;
+                    }
+                    
+                    var icon = {
+                        url: place.icon,
+                        size: new google.maps.Size(71, 71),
+                        origin: new google.maps.Point(0, 0),
+                        anchor: new google.maps.Point(17, 34),
+                        scaledSize: new google.maps.Size(25, 25)
+                    };
+
+                    // Create a marker for each place.
+                    markers.push(new google.maps.Marker({
+                        map: map,
+                        icon: icon,
+                        title: place.name,
+                        position: place.geometry.location
+                    }));
+
+                    if (place.geometry.viewport) {
+                        // Only geocodes have viewport.
+                        bounds.union(place.geometry.viewport);
+                    } else {
+                        bounds.extend(place.geometry.location);
+                    }
+                });
+                map.fitBounds(bounds);
+                poly.setMap(null);
+                poly = new google.maps.Polyline({
+                    strokeColor: '#000000',
+                    strokeOpacity: 1.0,
+                    strokeWeight: 3
+                });
+                poly.setMap(map);
+                var path = poly.getPath();
+                $.ajax({
+                    type: 'POST',
+                    url: "{{route('coordinates')}}",
+                    data: {
+                        c_name: city_name,
+                        _token: $('input[name=_token]').val(),
+                    },
+                    dataType: "json",
+                    success: function (data) {
+
+                        if (data.error) {
+                            alert(data.result);
+                        } else {
+                            console.log(data.result);
+                            var myTrip = [];
+                            var count = data.result.length;
+                            for (var i = 0; i < data.result.length; i++) {
+                                  path.push(new google.maps.LatLng(data.result[i][1], data.result[i][0]));
+                            }
+
+                        }
+
+                    }
+                });
+
+            });
+
+        }
+
+    </script>
+    <script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCXAEJOmp7v7uXD-Vrmaw6xjBl_ZExIn7g&libraries=places&callback=initAutocomplete">
     </script>
 </body>
 

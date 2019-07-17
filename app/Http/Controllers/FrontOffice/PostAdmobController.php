@@ -7,6 +7,7 @@ use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Database\Eloquent\Collection;
+use maxh\Nominatim\Nominatim;
 use App\Category;
 use App\SubCategory;
 use App\PostedAdmob;
@@ -176,5 +177,32 @@ class PostAdmobController extends BaseController
 
         }
       }
+
+      public function getCoordinates(){
+
+        $data=$_POST;
+        if($data['c_name'] !="")
+        {
+        $url = "http://nominatim.openstreetmap.org/";
+        $nominatim = new Nominatim($url);
+        $search = $nominatim->newSearch()
+            ->country('France')
+            ->city($data['c_name'])
+            //  ->postalCode('25200')
+            ->polygon('geojson')    //or 'kml', 'svg' and 'text'
+            ->addressDetails();
+        $result = $nominatim->find($search);
+        //print_r($result[0]['geojson']['coordinates'][0]);exit;
+       // print_r($result);exit;
+       echo json_encode(array('error'=>false,'result'=>$result[0]['geojson']['coordinates'][0]));
+        }
+        else{
+          echo json_encode(array('error'=>false,'result'=>"Error"));
+        }
+
+
+       
+
+    }
 
 }

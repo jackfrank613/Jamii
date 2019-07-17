@@ -14,12 +14,14 @@ class ExampleController extends Controller
 
         $search = $nominatim->newSearch()
             ->country('France')
-            ->city('Paray-Vieille-Poste')
-            ->postalCode('91550')
+             ->city('Paray-Vieille-Poste')
+            // ->postalCode('91550')
             ->polygon('geojson')    //or 'kml', 'svg' and 'text'
             ->addressDetails();
         $result = $nominatim->find($search);
-        print_r($result);exit();
+        print_r($result);exit;
+
+       
 
     }
 }
